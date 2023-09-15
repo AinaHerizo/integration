@@ -65,7 +65,35 @@ const App = () => {
       h3:{
         fontSize:"80px",
         lineHeight: "85px",
-      }
+        '@media (max-width:1204px)':{
+          fontSize:"60px",
+          lineHeight: "50px",
+        },
+        '@media (max-width:960px)':{
+          fontSize:"40px",
+          lineHeight: "35px",
+        },
+        '@media (max-width:600px)':{
+          fontSize:"20px",
+          lineHeight: "20px",
+        },
+      },
+      h4:{
+        '@media (max-width:960px)':{
+          fontSize:"30px",
+        },
+        '@media (max-width:600px)':{
+          fontSize:"20px",
+        },
+      },
+      h5:{
+        '@media (max-width:960px)':{
+          fontSize:"20px",
+        },
+        '@media (max-width:600px)':{
+          fontSize:"15px",
+        },
+      },
     },
     // BREAKPOINTS
     breakpoints: {

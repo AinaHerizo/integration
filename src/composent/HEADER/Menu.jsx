@@ -45,14 +45,14 @@ function closeMenu(){
 // STYLE PERSONALISE
   const gridStyle = {
     display: "grid",
-    gridTemplateColumns: "50% 45%",
+    gridTemplateColumns: "45% 50%",
     width: "100%",
     alignItems: "center",
     padding: "50px 0 30px 0!important",
     '@media (max-width:1502px)':{
       gridTemplateColumns: "40% 60%",
     },
-    '@media (max-width:1006px)':{
+    '@media (max-width:1024px)':{
       gridTemplateColumns: "45% 55%!important",
     },
     '@media (max-width:600px)':{
@@ -84,13 +84,13 @@ function closeMenu(){
           color="inherit"
           underline="none"
           sx={{ 
-            fontSize: "40px",
+            fontSize: "25px",
             color:textColor,
             '@media (max-width:1920px)':{
                 fontSize: "20px!important",
             },
-            '@media (max-width:1200px)':{
-              fontSize: "18px!important",
+            '@media (max-width:1440px)':{
+              fontSize: "16px!important",
             },
             '@media (max-width:1006px)':{
               fontSize: "15px!important",

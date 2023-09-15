@@ -1,10 +1,17 @@
+import { Box } from '@mui/material';
 import React from 'react';
+import BlogList from './BLOG/BlogList';
+import BlogTitle from './BLOG/BlogTitle';
 
-const Blog = () => {
+const Blog = ({theme}) => {
     return (
-        <div id="blog">
-          <p>BLOG</p>  
-        </div>
+        <Box id="blog">
+          <BlogTitle theme={theme}/>
+          <Box>
+            <BlogList theme={theme} title="ACHIEVES" imageTitle="service-achieve"/>
+          </Box>
+          
+        </Box>
     );
 };
 

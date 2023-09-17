@@ -46,52 +46,64 @@ const App = () => {
       fontFamily: 'Bebas Neue, Open Sans, Arial',
       // VARIANT
       h2:{
-        fontSize:"100px",
+        fontSize:"25px",
         color:"#fff",
-        lineHeight: "90px",
-        '@media (max-width:1204px)':{
-          fontSize:"70px",
-          lineHeight: "65px",
+        lineHeight: "30px",
+        '@media (min-width:600px)':{
+          fontSize:"25px",
+          lineHeight: "30px",
         },
-        '@media (max-width:960px)':{
-          fontSize:"50px",
-          lineHeight: "45px",
-        },
-        '@media (max-width:600px)':{
+        '@media (min-width:900px)':{
           fontSize:"30px",
           lineHeight: "30px",
         },
+        '@media (min-width:1200px)':{
+          fontSize:"50px",
+          lineHeight: "40px",
+        },
+        '@media (min-width:1920px)':{
+          fontSize:"100px",
+          lineHeight: "90px",
+        },
       },
       h3:{
-        fontSize:"80px",
-        lineHeight: "85px",
-        '@media (max-width:1204px)':{
-          fontSize:"60px",
-          lineHeight: "50px",
+        fontSize:"20px",
+        lineHeight: "25px",
+        '@media (min-width:600px)':{
+          fontSize:"30px",
+          lineHeight: "30px",
         },
-        '@media (max-width:960px)':{
+        '@media (min-width:1200px)':{
           fontSize:"40px",
-          lineHeight: "35px",
+          lineHeight: "30px",
         },
-        '@media (max-width:600px)':{
-          fontSize:"20px",
-          lineHeight: "20px",
+        '@media (min-width:1920px)':{
+          fontSize:"80px",
+          lineHeight: "85px",
         },
       },
       h4:{
-        '@media (max-width:960px)':{
-          fontSize:"30px",
+        '@media (min-width:600px)':{
         },
-        '@media (max-width:600px)':{
-          fontSize:"20px",
+        '@media (min-width:900px)':{
+        },
+        '@media (min-width:1200px)':{
+        },
+        '@media (min-width:1920px)':{
+        },
+        '@media (min-width:2560px)':{
         },
       },
       h5:{
-        '@media (max-width:960px)':{
-          fontSize:"20px",
+        '@media (min-width:600px)':{
         },
-        '@media (max-width:600px)':{
-          fontSize:"15px",
+        '@media (min-width:900px)':{
+        },
+        '@media (min-width:1200px)':{
+        },
+        '@media (min-width:1920px)':{
+        },
+        '@media (min-width:2560px)':{
         },
       },
     },
@@ -99,10 +111,11 @@ const App = () => {
     breakpoints: {
       values: {
         xs: 0,
-        sm: 601,
-        md: 961,
-        lg: 1201,
-        xl: 1537,
+        sm: 600,
+        md: 900,
+        lg: 1200,
+        xl: 1920,
+        xxl: 2560,
       },
     },
     // Remplace les valeurs par deffaut 
@@ -145,8 +158,8 @@ const App = () => {
               border:"5px solid #d25b38",
               boxShadow:"none",
             },
-            '@media (max-width:600px)':{
-              width: "100px",
+            '@media (max-width:900px)':{
+              width: "150px",
               fontSize:"15px",
               height:"50px",
           },

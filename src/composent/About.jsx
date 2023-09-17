@@ -10,7 +10,6 @@ const About = ({theme}) => {
             height: 'fit-content',
             display:"grid",
             gridTemplateColumns: "40% 60%",
-            padding:"0 200px",
             alignItems:"center",
             '@media (min-width: 1025px) and (max-width: 1280px)': {
                 gridTemplateColumns: "40% 60%",

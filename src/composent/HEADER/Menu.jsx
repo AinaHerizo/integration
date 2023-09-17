@@ -45,21 +45,15 @@ function closeMenu(){
 // STYLE PERSONALISE
   const gridStyle = {
     display: "grid",
-    gridTemplateColumns: "45% 50%",
+    gridTemplateColumns: "40% 60%",
     width: "100%",
     alignItems: "center",
     padding: "50px 0 30px 0!important",
-    '@media (max-width:1502px)':{
+    '@media (min-width:1200px)':{
       gridTemplateColumns: "40% 60%",
     },
-    '@media (max-width:1024px)':{
-      gridTemplateColumns: "45% 55%!important",
-    },
-    '@media (max-width:600px)':{
-      gridTemplateColumns: "60% 40%!important",
-    },
-    '@media (max-width:320px)':{
-      padding:"0",
+    '@media (min-width:2560px)':{
+      gridTemplateColumns: "45% 55%",
     },
   };
   // STYLE DU MENU LIST
@@ -86,14 +80,14 @@ function closeMenu(){
           sx={{ 
             fontSize: "25px",
             color:textColor,
-            '@media (max-width:1920px)':{
-                fontSize: "20px!important",
-            },
-            '@media (max-width:1440px)':{
-              fontSize: "16px!important",
-            },
-            '@media (max-width:1006px)':{
+            '@media (min-width:1200px)':{
               fontSize: "15px!important",
+            },
+            '@media (min-width:1920px)':{
+              fontSize: "20px!important",
+            },
+            '@media (min-width:2560px)':{
+              fontSize: "25px!important",
             },
           }}
           onClick={closeMenu}
@@ -118,7 +112,27 @@ function closeMenu(){
 
 <ThemeProvider theme={theme}>
 
-  <AppBar position="static" color="navMenu" sx={{ boxShadow: "none" }}>
+  <AppBar position="static" color="navMenu" 
+  sx={{
+    boxShadow: "none",
+    margin:"0 auto",
+    '@media (min-width:600px)':{
+      maxWidth:"600px",
+    },
+    '@media (min-width:900px)':{
+      maxWidth:"900px",
+    },
+    '@media (min-width:1200px)':{
+      maxWidth:"1200px",
+    },
+    '@media (min-width:1920px)':{
+      maxWidth:"1920px",
+    },
+    '@media (min-width:2560px)':{
+      maxWidth:"2560px",
+    },
+  }}>
+
     <CssBaseline />
     <Toolbar sx={gridStyle} component="nav">
 
@@ -129,13 +143,11 @@ function closeMenu(){
       {/* MENU BURGER */}
       <ToggleButton onClick={toggleMenu} value="menu"
         sx={{
-        display: { md: 'none' },
-        width: "fit-content",
+        display: { lg: 'none' },
         background: theme.palette.btnReadMore.main,
         color: theme.palette.btnReadMore.contrastText,
         border:"2px solid #fff",
         justifySelf: "end",
-        marginRight:"50px",
         ":active":{
           background: theme.palette.btnReadMore.dark,
           color: theme.palette.btnReadMore.contrastText,
@@ -145,9 +157,6 @@ function closeMenu(){
           background: theme.palette.btnReadMore.dark,
           color: theme.palette.btnReadMore.contrastText,
           border:"2px solid #d25b38",
-        },
-        '@media (max-width:600px)':{
-          marginRight:"0px",
         },
       }}>MENU</ToggleButton>
 
@@ -163,7 +172,7 @@ function closeMenu(){
 
 
       {/* MENU NORMAL */}
-      <List sx={{ display: {xs:'none',md:'flex'}, justifyContent: "space-between"}}> 
+      <List sx={{ display: {xs:'none',lg:'flex'}, justifyContent: "space-between"}}> 
         {itemMenu("#fff")}
       </List>
       

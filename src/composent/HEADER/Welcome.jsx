@@ -19,7 +19,25 @@ const Welcome = ({theme}) => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Grid container column={12}>
+            <Grid container column={12} 
+            sx={{
+                margin:"auto",
+                '@media (min-width:600px)':{
+                    maxWidth:"600px",
+                  },
+                  '@media (min-width:900px)':{
+                    maxWidth:"900px",
+                  },
+                  '@media (min-width:1200px)':{
+                    maxWidth:"1200px",
+                  },
+                  '@media (min-width:1920px)':{
+                    maxWidth:"1920px",
+                  },
+                  '@media (min-width:2560px)':{
+                    maxWidth:"2560px",
+                  },
+            }}>
                 <Grid xs={12} sm={5}>
                     <Typography variant='h2'>WELCOME TO THE <span style={{ color: theme.palette.primary.main }}>AWARD WINNING</span> AGENCY</Typography>
                     <Typography

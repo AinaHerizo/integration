@@ -5,15 +5,11 @@ import React from 'react';
 const Welcome = ({theme}) => {
 
     const headerParagrapheStyle = {
-        fontSize:"25px",
+        fontSize:"15px",
         fontFamily:"Open Sans",
         margin:"30px 0px 60px",
-        '@media (max-width:1024px)':{
-            fontSize:"20px",
-        },
-        '@media (max-width:600px)':{
-            fontSize:"15px",
-            margin:"15px 0px 20px",
+        '@media (min-width:900px)':{
+            fontSize:"18px",
         },
     }
 
@@ -38,7 +34,7 @@ const Welcome = ({theme}) => {
                     maxWidth:"2560px",
                   },
             }}>
-                <Grid xs={12} sm={5}>
+                <Grid xs={12} md={5}>
                     <Typography variant='h2'>WELCOME TO THE <span style={{ color: theme.palette.primary.main }}>AWARD WINNING</span> AGENCY</Typography>
                     <Typography
                     sx={headerParagrapheStyle}>

@@ -1,11 +1,31 @@
 import { Box, Card, CardContent, ThemeProvider, Typography } from '@mui/material';
 import React from 'react';
 
-const BlogList = ({theme, title, imageTitle}) => {
+const ServiceList = ({theme, title, imageTitle}) => {
+
+
+    const cardStyle={
+        width: "100%",
+        '@media (min-width:1200px)':{
+            width: "100%",
+            },
+        '@media (min-width:1920px)':{
+            width: "77%",
+            }
+        }
+
     return (
         <ThemeProvider theme={theme}>
-            <Card>
-                <CardContent>
+            <Card sx={cardStyle}>
+                <CardContent
+                sx={{
+                    display: "grid",
+                    textAlign: "center",
+                    gridRowGap: "0.5rem",
+                }}
+                
+                
+                >
                     <Box><img src={"./image/"+imageTitle+".png"} alt={"logo pour "+imageTitle} /></Box>
                     <Typography variant='h6'>
                         {title}
@@ -19,4 +39,4 @@ const BlogList = ({theme, title, imageTitle}) => {
     );
 };
 
-export default BlogList;
+export default ServiceList;

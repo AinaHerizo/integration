@@ -10,8 +10,13 @@ const Colaborator = ({theme}) => {
             sx={{
                 background:`url(${process.env.PUBLIC_URL}/image/about.jpg)`,
                 backgroundRepeat:"no-repeat",
-                '@media(max-width: 1280px)': {
+                backgroundSize: "cover",
+                '@media(min-width: 600px)': {
                     backgroundSize: "cover",
+                  },
+                '@media(min-width: 1920px)': {
+                    backgroundSize: "auto",
+                    backgroundRepeat:"no-repeat",
                   },
                 
             }}>

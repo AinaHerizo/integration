@@ -11,12 +11,9 @@ const Footer = ({theme}) => {
                 padding: '30px',
                 color: theme.palette.secondary.main, 
                 fontFamily: 'Open Sans',
-                fontSize:"25px",
-                '@media (max-width:1024px)':{
-                    fontSize:"20px",
-                },
-                '@media (max-width:600px)':{
-                    fontSize:"15px",
+                fontSize:"15px",
+                '@media (min-width:900px)':{
+                    fontSize:"25px",
                 },
             }}
         >

@@ -13,7 +13,10 @@ const Header = ({theme}) => {
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 height: 'fit-content',
+                paddingTop:"0",
                 paddingBottom:"50px",
+                paddingLeft: "2rem",
+                paddingRight: "2rem",
                 margin:"0 auto",
             }}
             id='home'>

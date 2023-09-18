@@ -5,24 +5,26 @@ import React from 'react';
 const OneColaborator = ({theme, workingHours, designerName, isLast }) => {
 
     const box1Style = {
-        width: "100%",
-        display: "grid",
-        gridTemplateColumns: "40% 10% 50%",
-        alignItems: "center",
-        
-        '@media (max-width: 1440px)': {
-            gridTemplateColumns: "auto 10% auto",
+        gridTemplateColumns: "100%",
+        padding: "20px 0",     
+        '@media (min-width: 900px)': {
+            width: "100%",
+            display: "grid",
+            gridTemplateColumns: "40% 10% 50%",
+            alignItems: "center",
+        },
+        '@media (min-width: 1920px)': {
+            gridTemplateColumns: "33% 6% 61%",
             padding: "20px 0",
         },
-        '@media (max-width: 600px)': {
-            gridTemplateColumns: "100%",
+        '@media (min-width: 2560px)': {
+            gridTemplateColumns: "25% 5% 70%",
             padding: "20px 0",
         },
     };
 
     const box2Style = {
         color: "white",
-        textAlign: "end",
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-end",
@@ -38,21 +40,13 @@ const OneColaborator = ({theme, workingHours, designerName, isLast }) => {
         <ThemeProvider theme={theme}>
             <Box sx={box1Style}>
                 <Box sx={box2Style}>
-                    <Typography variant="h4"
-                    sx={{
-                        '@media (min-width: 1025px) and (max-width: 1280px)': {
-                        fontSize:"20px",
-                        },
-                    }}>
+                    <Typography variant="h4">
                         {workingHours}
                     </Typography>
                     <Typography variant='h5'
                     sx={{
                         color:"#fff",
                         paddingBottom:"30px",
-                        '@media (min-width: 1025px) and (max-width: 1280px)': {
-                            fontSize:"18px",
-                        },
                     }}>
                         {designerName}
                     </Typography>
@@ -62,11 +56,14 @@ const OneColaborator = ({theme, workingHours, designerName, isLast }) => {
                 </Box>
                 <Box
                  sx={{
-                    '@media (max-width: 1280px)': {
-                        color:"#fff",
-                        marginLeft:"20px",
+                    color:"#fff",
+                    '@media (min-width: 600px)': {
+                        marginLeft:"1rem",
                       },
-                      '@media (max-width: 1024px)': {
+                    '@media (min-width: 1920px)': {
+                        color:"#000",
+                      },
+                      '@media (min-width: 1200px)': {
                         '& p': {
                             marginBottom: "0",
                           },

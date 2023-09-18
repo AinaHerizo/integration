@@ -9,18 +9,27 @@ const About = ({theme}) => {
         sx={{
             height: 'fit-content',
             display:"grid",
-            gridTemplateColumns: "40% 60%",
+            gridTemplateColumns: "100%",
             alignItems:"center",
-            '@media (min-width: 1025px) and (max-width: 1280px)': {
-                gridTemplateColumns: "40% 60%",
-                padding:"0px 90px",
-            },
-            '@media (max-width: 1024px)': {
+            margin:"0 auto",
+            paddingLeft: "2rem",
+            paddingRight: "2rem",
+            '@media (min-width:600px)':{
+                maxWidth:"600px",
                 gridTemplateColumns: "100%",
-                padding:"30px 50px",
             },
-            '@media (max-width: 600px)': {
-                padding:"30px 30px",
+            '@media (min-width:900px)':{
+                maxWidth:"900px",
+            },
+            '@media (min-width:1200px)':{
+                maxWidth:"1200px",
+                gridTemplateColumns: "40% 60%",
+            },
+            '@media (min-width:1920px)':{
+                maxWidth:"1920px",
+            },
+            '@media (min-width:2560px)':{
+                maxWidth:"2560px",
             },
         }}>
             <Introduction theme={theme}/>

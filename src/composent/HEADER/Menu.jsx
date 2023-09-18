@@ -35,7 +35,7 @@ function closeMenu(){
   const navItems = [
     { name: "HOME", id: "home" },
     { name: "ABOUT US", id: "about" },
-    { name: "SERVICES", id: "services" },
+    { name: "SERVICES", id: "service" },
     { name: "PORTFOLIO", id: "portfolio" },
     { name: "OUR TEAM", id: "team" },
     { name: "NEWS", id: "news" },
@@ -45,10 +45,13 @@ function closeMenu(){
 // STYLE PERSONALISE
   const gridStyle = {
     display: "grid",
-    gridTemplateColumns: "40% 60%",
+    gridTemplateColumns: "45% 55%",
     width: "100%",
     alignItems: "center",
-    padding: "50px 0 30px 0!important",
+    padding: "0 0 30px 0",
+    '@media (min-width:600px)':{
+      padding: "50px 0 30px 0",
+    },
     '@media (min-width:1200px)':{
       gridTemplateColumns: "40% 60%",
     },
@@ -109,78 +112,77 @@ function closeMenu(){
 
 
   return (
+    <ThemeProvider theme={theme}>
 
-<ThemeProvider theme={theme}>
-
-  <AppBar position="static" color="navMenu" 
-  sx={{
-    boxShadow: "none",
-    margin:"0 auto",
-    '@media (min-width:600px)':{
-      maxWidth:"600px",
-    },
-    '@media (min-width:900px)':{
-      maxWidth:"900px",
-    },
-    '@media (min-width:1200px)':{
-      maxWidth:"1200px",
-    },
-    '@media (min-width:1920px)':{
-      maxWidth:"1920px",
-    },
-    '@media (min-width:2560px)':{
-      maxWidth:"2560px",
-    },
-  }}>
-
-    <CssBaseline />
-    <Toolbar sx={gridStyle} component="nav">
-
-      <Typography variant="h1">
-        <img className="logo" src="./image/logo.png" alt="Logo de arrow design" />
-      </Typography>
-
-      {/* MENU BURGER */}
-      <ToggleButton onClick={toggleMenu} value="menu"
-        sx={{
-        display: { lg: 'none' },
-        background: theme.palette.btnReadMore.main,
-        color: theme.palette.btnReadMore.contrastText,
-        border:"2px solid #fff",
-        justifySelf: "end",
-        ":active":{
-          background: theme.palette.btnReadMore.dark,
-          color: theme.palette.btnReadMore.contrastText,
-          border:"2px solid #d25b38",
+      <AppBar position="static" color="navMenu" 
+      sx={{
+        boxShadow: "none",
+        margin:"0 auto",
+        '@media (min-width:600px)':{
+          maxWidth:"600px",
         },
-        ":hover":{
-          background: theme.palette.btnReadMore.dark,
-          color: theme.palette.btnReadMore.contrastText,
-          border:"2px solid #d25b38",
+        '@media (min-width:900px)':{
+          maxWidth:"900px",
         },
-      }}>MENU</ToggleButton>
+        '@media (min-width:1200px)':{
+          maxWidth:"1200px",
+        },
+        '@media (min-width:1920px)':{
+          maxWidth:"1920px",
+        },
+        '@media (min-width:2560px)':{
+          maxWidth:"2560px",
+        },
+      }}>
 
-      <Drawer 
-      anchor="right"
-      open={isMenuOpen}
-      onClose={closeMenu}
-      >
-        <List>
-          {itemMenu("#000")}
-        </List>
-      </Drawer>
+        <CssBaseline />
+        <Toolbar sx={gridStyle} component="nav">
+
+          <Typography variant="h1">
+            <img className="logo" src="./image/logo.png" alt="Logo de arrow design" />
+          </Typography>
+
+          {/* MENU BURGER */}
+          <ToggleButton onClick={toggleMenu} value="menu"
+            sx={{
+            display: { lg: 'none' },
+            background: theme.palette.btnReadMore.main,
+            color: theme.palette.btnReadMore.contrastText,
+            border:"2px solid #fff",
+            justifySelf: "end",
+            ":active":{
+              background: theme.palette.btnReadMore.dark,
+              color: theme.palette.btnReadMore.contrastText,
+              border:"2px solid #d25b38",
+            },
+            ":hover":{
+              background: theme.palette.btnReadMore.dark,
+              color: theme.palette.btnReadMore.contrastText,
+              border:"2px solid #d25b38",
+            },
+          }}>MENU</ToggleButton>
+
+          <Drawer 
+          anchor="right"
+          open={isMenuOpen}
+          onClose={closeMenu}
+          >
+            <List>
+              {itemMenu("#000")}
+            </List>
+          </Drawer>
 
 
-      {/* MENU NORMAL */}
-      <List sx={{ display: {xs:'none',lg:'flex'}, justifyContent: "space-between"}}> 
-        {itemMenu("#fff")}
-      </List>
-      
-    </Toolbar>
-  </AppBar>
+          {/* MENU NORMAL */}
+          <List sx={{ display: {xs:'none',lg:'flex'}, justifyContent: "space-between"}}> 
+            {itemMenu("#fff")}
+          </List>
+          
+        </Toolbar>
+      </AppBar>
 
-</ThemeProvider>
-  );    
-};
+    </ThemeProvider>
+      );    
+    };
 
 export default Menu;

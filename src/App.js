@@ -11,6 +11,7 @@ import Price from './composent/Price';
 import Contact from './composent/Contact';
 import Footer from './composent/Footer';
 import Team from './composent/Team';
+import Photofolio from './composent/Photofolio';
 
 const App = () => {
 // DEFINITION DU THEME
@@ -82,7 +83,6 @@ const App = () => {
         '@media (min-width:1200px)':{
           fontSize:"40px",
           lineHeight: "40px",
-          width: "min-content",
         },
         '@media (min-width:1920px)':{
           fontSize:"80px",
@@ -248,8 +248,9 @@ const composantStyle={
       <Service theme={theme} blogStyle={composantStyle}/>
       <Portfolio theme={theme} portfolioStyle={composantStyle}/>
       <Team theme={theme} teamStyle={composantStyle}/>
+      <Photofolio theme={theme}/>
       <Price theme={theme} priceStyle={composantStyle}/>
-      <Contact theme={theme}/>
+      <Contact theme={theme} contactStyle={composantStyle}/>
       <Footer theme={theme}/>
     </ThemeProvider>
   );

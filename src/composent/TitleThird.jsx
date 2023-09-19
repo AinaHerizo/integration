@@ -1,8 +1,7 @@
-import { ThemeProvider } from '@emotion/react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, ThemeProvider } from '@mui/material';
 import React from 'react';
 
-const TitleThird = ({theme, firstCarTitle, orangeTitle, secondCarTitle}) => {
+const TitleThird = ({theme, firstCarTitle, orangeTitle, secondCarTitle, isLastOrange}) => {
 
     const titleStyle ={
         '@media (min-width:600px)':{
@@ -12,13 +11,25 @@ const TitleThird = ({theme, firstCarTitle, orangeTitle, secondCarTitle}) => {
             display: "flex",
             alignItems: "flex-end",
             marginBottom:"0",
+            '& > h3':{
+                '& > span':{
+                display: isLastOrange ? "block!important" : "inherit!important",
+                }
+            }
         },
+        '& > h3':{
+            width: isLastOrange ? "max-content" : "fit-content",
+            '& > span':{
+            color: theme.palette.primary.main,
+            display:"contents",
+            }
+        }
     }
 
     return (
         <ThemeProvider theme={theme}>
             <Box sx={titleStyle}>
-                <Typography variant='h3'>{firstCarTitle} <span style={{ color: theme.palette.primary.main }}>{orangeTitle} </span>{secondCarTitle}</Typography>
+                <Typography variant='h3'>{firstCarTitle} <span>{orangeTitle} </span>{secondCarTitle}</Typography>
             </Box>
         </ThemeProvider>
     );
